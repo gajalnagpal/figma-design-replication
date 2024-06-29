@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Integration Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            width: 1366px;
+            height: 82px;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            height: 60px;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            color: #ff4757;
+        }
+        .btn {
+            background-color: #ff4757;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #ff6b81;
+        }
+        .main-content {
+            text-align: center;
+            padding: 0;
+            background: url("image.png") no-repeat center center;
+            background-size: cover;
+            height: 250px; /* Adjust height as needed */
+            width:1366px;
+            top: 332px;
+            margin-bottom: 40px;
+
+        }
+        .sub-content {
+            width: 805px;
+            height: 54px;
+            margin: 20px auto;
+            background: url('Developmental Wonders_ Early Learning Made Fun.png') no-repeat center center;
+            background-size: contain;
+            opacity: 1; /* Set to 1 if you want to see the image */
+            margin-bottom: 40px;
+        }
+        .extra-content {
+            width: 973.79px;
+            height: 265px;
+            margin: 20px auto;
+            background: url('Group 290781.png') no-repeat center center;
+            background-size: cover;
+            margin-bottom: 50px;
+        }
+        .wave-content {
+            width: 312px;
+            height: 25px;
+            margin: 20px auto; /* Add margin to create gap */
+            background: url('Vector 12.png') no-repeat center center;
+            background-size: contain;
+            top:845px;
+            left: 839px;
+            border: 2px;
+            margin-bottom: 50px;
+            
+        }
+        .final-content {
+            width: 950px;
+            height: 46px;
+            margin:20px auto;
+            background: url("Happy Parents, Thriving Tots_ Witnessing Their Child's Growth.png") no-repeat center center;
+            background-size: contain;
+            top: 909px;
+            left: 208px;
+            gap: 0px;
+            opacity: 0px;
+
+        }
+        .subs-content{
+            width: 629px;
+            height: 34px;
+            margin:20px auto;
+            background: url("smarter.png") no-repeat center center;
+            background-size: contain;
+            top: 972px;
+            left: 369px;
+            gap: 0px;
+            opacity: 0px;
+        }
+        .testimonial-section {
+            display: flex;
+            justify-content: center;
+            gap: 0px;
+            margin-bottom: 50px;
+        }
+        .testimonial-content {
+            width: 360px;
+            height: 358px;
+            top: 1023px;
+            left: 113px;
+            gap: 0px;
+            opacity: 0px;
+            background: url('Group 290440.png') no-repeat center center;
+            background-size: cover;
+            margin-bottom: 30px;
+            margin: 0 5px;
+        }
+        .see-all-button {
+            display: flex;
+            justify-content: center;
+
+        }
+        .see-all-button img {
+            width: auto;
+            height: auto;
+        }
+        .stats-content {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .stats-content img {
+            width: 887px; /* Adjust width as needed */
+            height: 130px; /* Adjust height as needed */
+            top: 1507px;
+            left: 240px;
+        }
+        .brilliant-minds-content {
+            display: flex;
+            justify-content: center;
+            margin-top: 120px;
+        }
+        .brilliant-minds-content img {
+            width: 880px;
+            height: 45px;
+            gap: 0px;
+            opacity: 0px;
+        }    
+        .kids{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px; /* Adjust gap as needed */
+        }
+        .kids-content{
+            width: 360.28px;
+            height: 338px;
+            top: 1877px;
+            left: 113px;
+            gap: 0px;
+            border-radius: 12px 12px 0px 0px;
+            opacity: 0px;
+            background: url('Group 289983.png') no-repeat center center;
+            background-size: cover;
+            margin-bottom: 50px;
+        }
+        .imagine{
+            width: 1366px;
+            height: 160px;
+            top: 2280px;
+            gap: 0px;
+            opacity: 0px;
+            background: url("g.png") no-repeat center center;
+            background-size: cover;
+            margin-bottom: 30px;
+        }
+        .impact-section{
+            width: 1366px;
+            height: 435px;
+            top: 2875px;
+            gap: 0px;
+            opacity: 0px;
+            background: url("pics.png") no-repeat center center;
+            background-size: covee;
+
+        }
+        .form-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ccc;
+            z-index: 9;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 300px;
+        }
+        .form-header {
+            background-color: #007BFF; /* Blue background */
+            color: white; /* White text */
+            padding: 10px;
+            margin: 0;
+            text-align: center;
+        }
+        .form-popup input, .form-popup select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-popup .apply-btn {
+            background-color: #ff4757;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .form-popup .apply-btn:hover {
+            background-color: #ff6b81;
+        }
+        .form-popup .close-btn {
+            background-color: #ccc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .form-popup .close-btn:hover {
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <img src="download.png" alt="Book a Free Demo" class="demo-img" onclick="openForm()">
+    </nav>
+    <div class="main-content">
+        <!-- The background image will handle the display of text -->
+    </div>
+    <div class="sub-content">
+        <!-- This div will display the second image -->
+    </div>
+    <div class="extra-content"></div>
+    <div class="wave-content"></div>
+    <div class="final-content"></div> <!-- Additional final content -->
+    <div class="subs-content"></div>
+    <div class="testimonial-section">
+        <div class="testimonial-content"></div>
+        <div class="testimonial-content"></div>
+        <div class="testimonial-content"></div>
+    </div> <!-- Testimonial images added here -->
+    <div class="see-all-button">
+        <img src="Group 289864.png" alt="See All Button">
+    </div>  
+    <div class="stats-content">
+        <img src="Group 290786.png" alt="Stats Image">
+    </div>  
+    <div class="brilliant-minds-content">
+        <img src="brillant.png" alt="Brilliant Minds Image">
+    </div>
+    <div class="kids">
+        <div class="kids-content"></div>
+        <div class="kids-content"></div>
+        <div class="kids-content"></div>               
+    </div>
+    <div class="imagine"></div>
+    <div class="impact-section">
+        <!-- This div will display the impact section image with text and conversation -->
+    </div>
+    <div class="form-popup" id="demoForm">
+        <div class="form-header">
+            <h2>Book Demo Session</h2>
+            <p>Only 4 Spots Left!</p>
+        </div>
+        <form>
+            <input type="text" name="name" placeholder="Rahul Sharma" required>
+            <input type="email" name="email" placeholder="Email Id" required>
+            <input type="tel" name="mobile" placeholder="+91 Enter mobile number" required>
+            <select name="babyStage" required>
+                <option value="">Select Baby Stage</option>
+                <option value="Stage 1">Stage 1</option>
+                <option value="Stage 2">Stage 2</option>
+                <option value="Stage 3">Stage 3</option>
+            </select>
+            <button type="button" class="apply-btn" onclick="submitForm()">Apply Now</button>
+            <button type="button" class="close-btn" onclick="closeForm()">Close</button>
+        </form>
+        <p>UpTodd’s <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a> for complete data security</p>
+    </div>
+    <script>
+        function openForm() {
+            document.getElementById("demoForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("demoForm").style.display = "none";
+        }
+
+        function submitForm() {
+            // Get form data
+            const name = document.querySelector('input[name="name"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const mobile = document.querySelector('input[name="mobile"]').value;
+            const babyStage = document.querySelector('select[name="babyStage"]').value;
+
+            // Validate form data
+            if (name && email && mobile && babyStage) {
+                // Save form data to local storage
+                const formData = { name, email, mobile, babyStage };
+                localStorage.setItem('demoFormData', JSON.stringify(formData));
+
+                alert('Form submitted successfully');
+                closeForm();
+            } else {
+                alert('Please fill out all fields');
+            }
+        }
+    </script>
+</body>
+</html>
